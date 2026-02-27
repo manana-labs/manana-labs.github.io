@@ -86,11 +86,23 @@ a {
   color: #1a4d2e;
 }
 
+.about-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
 .portrait {
-  width: 140px;
+  width: 120px;
   border-radius: 50%;
-  float: right;
-  margin: 0 0 1rem 1.5rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 500px) {
+  .about-row {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 footer {
