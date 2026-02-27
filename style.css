@@ -94,8 +94,11 @@ a {
 
 .portrait {
   width: 120px;
-  border-radius: 50%;
+  border-radius: 4px;
   flex-shrink: 0;
+  object-fit: cover;
+  object-position: top;
+  aspect-ratio: 3 / 4;
 }
 
 @media (max-width: 500px) {
