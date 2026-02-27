@@ -22,13 +22,15 @@ header {
   margin-bottom: 1.5rem;
 }
 
-.logo {
-  height: 100px;
-  margin-bottom: 0.5rem;
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 header p {
   color: #555;
+  margin-top: 0.25rem;
 }
 
 nav {
@@ -90,13 +92,9 @@ a {
   align-items: flex-start;
 }
 
-.portrait {
+.logo-about {
   width: 120px;
-  border-radius: 4px;
   flex-shrink: 0;
-  object-fit: cover;
-  object-position: top;
-  aspect-ratio: 3 / 4;
 }
 
 @media (max-width: 500px) {
