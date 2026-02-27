@@ -22,15 +22,13 @@ header {
   margin-bottom: 1.5rem;
 }
 
-header h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+.logo {
+  height: 100px;
+  margin-bottom: 0.5rem;
 }
 
 header p {
   color: #555;
-  margin-top: 0.25rem;
 }
 
 nav {
