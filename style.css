@@ -86,12 +86,11 @@ a {
   color: #1a4d2e;
 }
 
-.team-member {
-  margin-bottom: 0.5rem;
-}
-
-.team-member strong {
-  font-weight: 600;
+.portrait {
+  width: 140px;
+  border-radius: 50%;
+  float: right;
+  margin: 0 0 1rem 1.5rem;
 }
 
 footer {
