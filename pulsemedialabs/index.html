@@ -103,9 +103,22 @@
       font-size: 0.85rem;
     }
 
-    nav a.nav-showcase {
-      color: #1a5e76;
+    .showcase-link {
+      display: block;
+      text-align: center;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .showcase-link a {
+      color: #162a31;
+      text-decoration: none;
       font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .showcase-link a:hover {
+      text-decoration: underline;
     }
 
     .showcase-item {
@@ -211,8 +224,10 @@
       <a href="#pulse-predict">Predict</a>
       <a href="#pulse-analyze">Analyze</a>
       <a href="#pulse-engine">Engine</a>
-      <a href="#showcase" class="nav-showcase">Showcase</a>
     </nav>
+    <div class="showcase-link">
+      <a href="#showcase">See it in action &darr;</a>
+    </div>
 
     <section>
       <h2>Products</h2>
@@ -377,6 +392,7 @@
               <span>Pulse Files</span>
               <span>Pulse Analyze</span>
               <span>Pulse Digital</span>
+              <span>Pulse Engine</span>
               <span class="tag-country">India</span>
             </div>
           </div>
