@@ -15,10 +15,20 @@
 
   <link rel="stylesheet" href="../style.css">
   <style>
+    header {
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
     .hero-logo {
-      display: block;
-      width: 140px;
-      margin: 0 auto 0.5rem;
+      width: 44px;
+      height: 44px;
       mix-blend-mode: multiply;
     }
 
@@ -192,12 +202,14 @@
 <body>
   <div class="container">
     <header>
-      <img src="assets/pulse_logo.png" alt="Pulse Media Labs" class="hero-logo">
-      <h1>Pulse Media Labs</h1>
+      <div class="hero-title">
+        <img src="assets/pulse_logo.png" alt="Pulse Media Labs" class="hero-logo">
+        <h1>Pulse Media Labs</h1>
+      </div>
       <p>AI-first infrastructure to analyze media at scale.</p>
     </header>
 
-    <p style="text-align:center; margin-top:-1rem; margin-bottom:1rem; font-size:0.9rem; color:#555;">
+    <p style="text-align:center; margin-top:-0.25rem; margin-bottom:0.75rem; font-size:0.9rem; color:#555;">
       From <a href="/" style="color:#162a31; font-weight:600;">Manana Labs</a>
     </p>
 
