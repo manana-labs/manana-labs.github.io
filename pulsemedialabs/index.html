@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pulse Media Labs — AI-first Media Analyses at Scale</title>
   <meta name="description" content="Pulse Media Labs builds AI-first infrastructure to analyze TV, podcasts, print, and digital media at scale.">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="canonical" href="https://mananalabs.ai/pulsemedialabs/">
 
   <meta property="og:title" content="Pulse Media Labs — AI-first Media Analyses at Scale">
@@ -102,6 +103,11 @@
       font-size: 0.85rem;
     }
 
+    nav a.nav-showcase {
+      color: #1a5e76;
+      font-weight: 600;
+    }
+
     .showcase-item {
       display: flex;
       gap: 1.25rem;
@@ -164,6 +170,11 @@
       border-radius: 4px;
     }
 
+    .showcase-tags .tag-country {
+      background: #f0ebe3;
+      color: #6b5730;
+    }
+
     @media (max-width: 500px) {
       .product-item,
       .showcase-item {
@@ -200,7 +211,7 @@
       <a href="#pulse-predict">Predict</a>
       <a href="#pulse-analyze">Analyze</a>
       <a href="#pulse-engine">Engine</a>
-      <a href="#showcase">Showcase</a>
+      <a href="#showcase" class="nav-showcase">Showcase</a>
     </nav>
 
     <section>
@@ -360,11 +371,13 @@
         <div class="showcase-item">
           <img src="assets/ebt.png" alt="Electoral Bonds Tracker" class="showcase-thumb">
           <div class="showcase-body">
-            <h3><a href="https://www.reporters-collective.in/electoral-bonds-tracker#tracker">Reporters' Collective &mdash; Electoral Bonds Tracker</a></h3>
-            <p>Interactive tracker revealing the web of political donations through electoral bonds. Built on Pulse Files for document digitization and Pulse Analyze for extracting structured data from thousands of bond records.</p>
+            <h3><a href="https://www.reporters-collective.in/electoral-bonds-tracker#tracker">The Reporters' Collective &mdash; Electoral Bonds Tracker</a></h3>
+            <p>Interactive tracker connecting corporate donations via electoral bonds to government contracts, raids, and court cases. Pulse Files digitized thousands of bond PDFs released by the Election Commission, Pulse Analyze extracted structured donor-recipient data, and Pulse Digital pulled contemporaneous news coverage to surface correlations between donations and political events.</p>
             <div class="showcase-tags">
               <span>Pulse Files</span>
               <span>Pulse Analyze</span>
+              <span>Pulse Digital</span>
+              <span class="tag-country">India</span>
             </div>
           </div>
         </div>
