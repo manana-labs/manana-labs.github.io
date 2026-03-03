@@ -102,13 +102,77 @@
       font-size: 0.85rem;
     }
 
+    .showcase-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid #E0E0E0;
+    }
+
+    .showcase-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .showcase-item:first-child {
+      padding-top: 0;
+    }
+
+    .showcase-thumb {
+      width: 160px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      border: 1px solid #E0E0E0;
+      object-fit: contain;
+    }
+
+    .showcase-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #162a31;
+      margin-bottom: 0.3rem;
+    }
+
+    .showcase-body h3 a {
+      color: #162a31;
+      text-decoration: none;
+    }
+
+    .showcase-body h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .showcase-body p {
+      font-size: 0.92rem;
+      color: #444;
+      margin-bottom: 0.4rem;
+    }
+
+    .showcase-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.35rem;
+    }
+
+    .showcase-tags span {
+      font-size: 0.78rem;
+      background: #e8f4f8;
+      color: #1a5e76;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+
     @media (max-width: 500px) {
-      .product-item {
+      .product-item,
+      .showcase-item {
         flex-direction: column;
         align-items: center;
       }
 
-      .product-body {
+      .product-body,
+      .showcase-body {
         text-align: left;
       }
     }
@@ -136,6 +200,7 @@
       <a href="#pulse-predict">Predict</a>
       <a href="#pulse-analyze">Analyze</a>
       <a href="#pulse-engine">Engine</a>
+      <a href="#showcase">Showcase</a>
     </nav>
 
     <section>
@@ -280,6 +345,26 @@
             <div class="product-links">
               <a href="#">Demo</a> <a href="#">Video</a>
               <span class="placeholder">(coming soon)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="showcase">
+      <h2>Showcase</h2>
+
+      <div class="product-list">
+
+        <div class="showcase-item">
+          <img src="assets/ebt.png" alt="Electoral Bonds Tracker" class="showcase-thumb">
+          <div class="showcase-body">
+            <h3><a href="https://www.reporters-collective.in/electoral-bonds-tracker#tracker">Reporters' Collective &mdash; Electoral Bonds Tracker</a></h3>
+            <p>Interactive tracker revealing the web of political donations through electoral bonds. Built on Pulse Files for document digitization and Pulse Analyze for extracting structured data from thousands of bond records.</p>
+            <div class="showcase-tags">
+              <span>Pulse Files</span>
+              <span>Pulse Analyze</span>
             </div>
           </div>
         </div>
