@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pulse Media Labs | Precision Media Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "surface-container-low": "#f7f3e9",
+                        "on-surface-variant": "#42484a",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-primary-container": "#7d929a",
+                        "surface-variant": "#e6e2d8",
+                        "outline-variant": "#c2c7ca",
+                        "inverse-surface": "#31312a",
+                        "inverse-primary": "#b5cad3",
+                        "tertiary-container": "#182b26",
+                        "primary-fixed-dim": "#b5cad3",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d1e7df",
+                        "outline": "#73787a",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#e4e2e2",
+                        "on-secondary-fixed-variant": "#474747",
+                        "surface-container-highest": "#e6e2d8",
+                        "surface": "#fdf9ef",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "background": "#fdf9ef",
+                        "tertiary-fixed-dim": "#b5cbc3",
+                        "surface-container-high": "#ece8de",
+                        "on-background": "#1c1c16",
+                        "surface-container": "#f1eee4",
+                        "primary-container": "#162a31",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#0b1f1a",
+                        "on-secondary-container": "#656464",
+                        "tertiary": "#031612",
+                        "surface-dim": "#dddad0",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#374b45",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fdf9ef",
+                        "secondary": "#5f5e5e",
+                        "primary-fixed": "#d0e6ef",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#364a51",
+                        "on-surface": "#1c1c16",
+                        "inverse-on-surface": "#f4f0e6",
+                        "primary": "#01151c",
+                        "surface-tint": "#4d6169",
+                        "on-tertiary-container": "#7e938c",
+                        "on-primary-fixed": "#091e25"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fdf9ef; /* surface */
+            color: #1c1c16; /* on-surface */
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #162a31 0%, #01151c 100%);
+        }
+        .glass-header {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-fixed selection:text-primary">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 glass-header shadow-sm dark:shadow-none">
+<nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<div class="text-xl font-black text-cyan-950 font-headline tracking-tight">Pulse Media Labs</div>
+<div class="hidden md:flex items-center space-gap-8 gap-x-8">
+<a class="text-cyan-900 border-b-2 border-cyan-900 pb-1 font-headline font-bold" href="#">Platform &amp; Solutions</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-600 font-medium hover:opacity-80 transition-opacity">Login</button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-lg font-headline font-bold text-sm tracking-wide shadow-lg hover:opacity-90 transition-all active:scale-95 duration-150">
+                    Get Started
+                </button>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center overflow-hidden hero-gradient">
+<div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10 py-16">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-xs font-bold tracking-widest uppercase">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                        Next-Gen Architecture
+                    </div>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-white leading-[1.1] tracking-tight">
+                        Precision Media Engineering
+                    </h1>
+<p class="text-xl text-primary-fixed-dim leading-relaxed max-w-xl font-body">
+                        Scale your media presence with AI-driven orchestration. We bridge the gap between creative vision and automated delivery for global innovators.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-white text-primary px-8 py-4 rounded-xl font-headline font-bold text-lg hover:bg-surface-container-lowest transition-colors active:scale-95 shadow-xl">
+                            Get Started
+                        </button>
+<button class="bg-transparent border border-white/20 text-white px-8 py-4 rounded-xl font-headline font-bold text-lg backdrop-blur-sm hover:bg-white/10 transition-colors">
+                            View Platform
+                        </button>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="relative z-10 animate-float">
+<div class="aspect-square bg-white/5 rounded-[4rem] p-4 border border-white/10 backdrop-blur-3xl overflow-hidden shadow-2xl">
+<img alt="Dynamic abstract visualization of global media orchestration nodes" class="w-full h-full object-cover rounded-[3rem] opacity-90 scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNir6_8yQ9uDDgjfo9gTsfvmnYMSFJfXuGL9czLTJ6E5-FPtJLMGPnNDT-gKV2w4VNC67OdpbSNdALdYEo_EoLODHiCIgRel57oqH8A0ioy1fw9r345PoCmcQdhWY1ulKkKF44hOcYLjLP1mDZJiq_U_iTgaFYuzvtvhlpQChN0vSkgmNQtomFcfysm66b-ybFOm4kPkQhxGdNTHvcsL6y2UjUuwuzutP0VC9yjfm0Mote9YIg2yPws-5T_i8BlT-F4C0VXxJCBw"/>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-cyan-500/30 blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-32 -left-32 w-[30rem] h-[30rem] bg-blue-600/20 blur-[140px] rounded-full"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-50 mix-blend-overlay pointer-events-none">
+<span class="material-symbols-outlined text-[30rem] text-white/10 font-thin">all_inclusive</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-20">
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-6 tracking-tight">Our Products</h2>
+<p class="text-lg text-on-surface-variant font-body">Integrated solutions designed to orchestrate every facet of modern media production.</p>
+</div>
+<div class="flex flex-col gap-8">
+<!-- Top Row (3 items) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Pulse TV -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden flex flex-col">
+<div class="h-48 overflow-hidden">
+<img alt="TV News broadcast debate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlB-BMFaliLXDmebOvsvR1PCj69Bt96_0EZN8k7BTg0_wtn7mX9avjkvrIYnmZdkpBK89qv1d_G2GRFkMS4xthwjo6qkycYV6ZvbtJpIbSdZaXSX-FCeXQr31RIWl-zSh8ESb-4kUF48IyDLlOOPdKnmHpVkd5V1vaYxGaFdwXHTiQSJhausN69wX7aq-0ampQ5Uz9HHkT8nKvDyO3o222NO3hqKh3Z5hOg1vWIpNTQjny38Iuuh_JM4ww-zNv3n8VpUn9bl4uqg"/>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4">Pulse TV</h3>
+<p class="text-on-surface-variant mb-6 font-body text-sm leading-relaxed">AI-driven analysis of prime-time broadcasts for speaker bias, time-share metrics, and content classification.</p>
+<a class="inline-flex items-center font-bold text-primary group-hover:translate-x-1 transition-transform" href="#">
+                                    Learn more <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Pulse Cast -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden flex flex-col">
+<div class="h-48 overflow-hidden">
+<img alt="Podcast studio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2_xwSie0SWUs8yON7mHx_4lYFCW8czSmO7Q_URaGw0oTS3tT4XCyV6M28EWUGodS_JW0HnM5F-UmondX1ei8RayEeZ1-P18z4UUsKd7GSxkXkoz3GGP9X2sKH0FI3-hbix2hHNr9w0lhbJuGBMqk9t6WEckqCvcNaUb6ZTkA96kiYWu1XXcIDor94Gdpc0zUmU2sIZZlp1EuivX1c8xVwi5EAgjie9fcztEekEC6Rk-BdlveHhNMzHygIe9iPQk3VMiKY51VhtQ"/>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4">Pulse Cast</h3>
+<p class="text-on-surface-variant mb-6 font-body text-sm leading-relaxed">Automated tracking and intelligent summarization of trending topics across global podcast networks.</p>
+<a class="inline-flex items-center font-bold text-primary group-hover:translate-x-1 transition-transform" href="#">
+                                    Learn more <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Pulse Print -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden flex flex-col">
+<div class="h-48 overflow-hidden">
+<img alt="Newspaper front page" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe3vAod-eWqeFjqjNTUTAGwCcYXmEa2JqU5sdJ8kGzFeYWbByTe1-SLLNQGKl6G7_tyJdW-mbGPWd1y9uDW5sQ5QCqEWYj0olXF_oMajI2oyd6bqWPnyDDW_eYeWpNqny_xNVqydaQ6Bhi0gCVjgSrRNUuheDYO6oM_gPO9STsm5uAP80ySi1sbL_r67uNb0ObFKkUIoOPOJYhc8a4oBkyxg8wecL554u7aiqu5U6jePTr4fdbIlFuy5Dg2GU8XVmQMyqLiSVFSw"/>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4">Pulse Print</h3>
+<p class="text-on-surface-variant mb-6 font-body text-sm leading-relaxed">Comprehensive digital tracking of print media topics and automated advertising coverage analysis.</p>
+<a class="inline-flex items-center font-bold text-primary group-hover:translate-x-1 transition-transform" href="#">
+                                    Learn more <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Bottom Row (2 items, centered) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:max-w-[66.66%] mx-auto w-full">
+<!-- Pulse Files -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden flex flex-col">
+<div class="h-48 overflow-hidden">
+<img alt="Formal government document" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNxtgzFaDVIDDPNIhJ_2_sfUiGyOjHC5HcDUhAQIqPZGaqksO1-kxOIzD1ZEQFkO1fdxoOSM3ftkpwUdogaoL9vJF3WRttjSUSKRuS5zS7NFzijzsQsbhaG9EZjzJe28MYWM8N3DE9HXlM8gWIJyb_F1pgTBEKbC0rat3NkCqynRDtJ3I8qGwCjWSu9nIyEmW7CYSVubvMzZ4iNgU2m773iFfrYq0HAFDnNBlog_ZJXa2sRsf8Sizl8hR8xNXRaBXSjKwzuwvlQQ"/>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4">Pulse Files</h3>
+<p class="text-on-surface-variant mb-6 font-body text-sm leading-relaxed">Industrial-scale document digitization and analysis for government records and public circulars.</p>
+<a class="inline-flex items-center font-bold text-primary group-hover:translate-x-1 transition-transform" href="#">
+                                    Learn more <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Pulse Feed -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden flex flex-col">
+<div class="h-48 overflow-hidden">
+<img alt="Social media and digital feed interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmNkAnME99bDWRlbiNfLvY5lpL3HxZrJfYeyglvW6JJ0PYBQ7IBrIQcvD1KZkrY1L-AbJp75XVooFc1cSFm0rWbIc1quOPKN823NhRh9YUiFjCiTHIBu1CjfopE0copMmwHsQTOjq7OpzWEAISGRRlZ9n7UMR35J603BHSZxuvvumSaTDApDY2MLtkVUyCeffo2KonkHpAUvy5gX89oTinASjiFMgA0mkEMaIaZvtF25CTpaEc445FY4_xbVPu_dbQRZcTMrxjRg"/>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4">Pulse Feed</h3>
+<p class="text-on-surface-variant mb-6 font-body text-sm leading-relaxed">Real-time ingestion of hyperlocal news and social streams for rapid global sentiment intelligence.</p>
+<a class="inline-flex items-center font-bold text-primary group-hover:translate-x-1 transition-transform" href="#">
+                                    Learn more <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pulse Engine (Pulse Engine Section) -->
+<section class="py-32 bg-primary relative overflow-hidden">
+<div class="absolute inset-0 opacity-5">
+<div class="h-full w-full bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:40px_40px]"></div>
+</div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-primary-fixed-dim rounded-full text-xs font-bold tracking-widest uppercase backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">settings_suggest</span>
+                            Infrastructure as a Product
+                        </div>
+<h2 class="text-4xl md:text-6xl font-headline font-extrabold text-white leading-tight">
+                            The Core Orchestration Layer: Pulse Engine
+                        </h2>
+<p class="text-xl text-primary-fixed-dim leading-relaxed font-body">
+                            Pulse Engine is the heavy-duty infrastructure that fuels our entire product ecosystem. It serves as the central processing brain, orchestrating complex data pipelines and AI models to power everything from TV analysis to global digital feeds.
+                        </p>
+<div class="grid grid-cols-2 gap-8 pt-4">
+<div class="space-y-2">
+<h4 class="text-white font-bold text-lg">Unified Pipeline</h4>
+<p class="text-primary-fixed-dim text-sm">A single source of truth for all media intelligence operations.</p>
+</div>
+<div class="space-y-2">
+<h4 class="text-white font-bold text-lg">Industrial Scale</h4>
+<p class="text-primary-fixed-dim text-sm">Engineered to process billions of data points with sub-second latency.</p>
+</div>
+</div>
+<button class="bg-white text-primary px-8 py-4 rounded-xl font-headline font-bold text-lg hover:bg-surface-container-lowest transition-all active:scale-95 shadow-xl">
+                            Explore the Engine
+                        </button>
+</div>
+<div class="relative">
+<div class="aspect-square bg-white/5 rounded-3xl border border-white/10 backdrop-blur-xl p-4 flex items-center justify-center group overflow-hidden">
+<!-- High-end architectural visualization representing core infrastructure -->
+<img alt="Abstract 3D architectural visualization of a central data core with interconnecting nodes representing industrial-scale infrastructure" class="w-full h-full object-cover rounded-2xl opacity-60 mix-blend-screen group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKByRvXFXLen-UYOBMZXK8BTyYhh37pWjQ87jcKne8xMl5ZXk6HhqHAErtY2mqkSnxiCz9E-r-htubLw6D00J419iPHQj0l2_ZJbseQDoK4zQ34X6OaTGsv5bwyAFxp0uEtyEbLfxDxunoHZniEdw34c8wZBp7LK6bLuru3XyQvQhhI6U8FwRwaXVlb9_D6GaZyaSe77gEl0IoCfdv3-dFdZPy4dKw9vggoUtPO-orFxiABRrEbp8yviz5syotEq7WbSmyVdZ9Lg"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(34,211,238,0.4)] z-20">
+<span class="material-symbols-outlined text-white text-5xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-[85%] h-[85%] border border-white/10 rounded-full animate-[spin_30s_linear_infinite]"></div>
+<div class="w-[70%] h-[70%] border border-cyan-400/20 rounded-full border-dashed animate-[spin_20s_linear_infinite_reverse]"></div>
+<div class="w-[50%] h-[50%] border border-white/5 rounded-full animate-[spin_40s_linear_infinite]"></div>
+</div>
+</div>
+<!-- Radial glow -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pulse Reach Section -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div class="relative order-2 lg:order-1">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-lg mt-12">
+<div class="text-4xl font-headline font-extrabold text-primary mb-2">99.9%</div>
+<div class="text-on-surface-variant font-bold text-sm tracking-wide uppercase">Uptime</div>
+</div>
+<div class="bg-primary p-8 rounded-3xl shadow-lg">
+<div class="text-4xl font-headline font-extrabold text-white mb-2">2.4B+</div>
+<div class="text-primary-fixed-dim font-bold text-sm tracking-wide uppercase">API Calls</div>
+</div>
+<div class="bg-surface-container-highest p-8 rounded-3xl shadow-lg">
+<div class="text-4xl font-headline font-extrabold text-primary mb-2">12ms</div>
+<div class="text-on-surface-variant font-bold text-sm tracking-wide uppercase">Latency</div>
+</div>
+<div class="bg-tertiary-fixed p-8 rounded-3xl shadow-lg mt-12">
+<div class="text-4xl font-headline font-extrabold text-on-tertiary-fixed mb-2">140+</div>
+<div class="text-on-tertiary-fixed-variant font-bold text-sm tracking-wide uppercase">Countries</div>
+</div>
+</div>
+</div>
+<div class="space-y-8 order-1 lg:order-2">
+<div class="text-primary font-headline font-extrabold text-sm uppercase tracking-[0.2em]">Pulse Reach</div>
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface tracking-tight">Global Influence, Automated.</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed font-body">
+                            Pulse AI doesn't just manage media—it learns your brand's unique pulse. Our automated engagement layer analyzes real-time performance metrics to optimize your reach across every continent simultaneously.
+                        </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-4 text-on-surface font-medium">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Autonomous content optimization
+                            </li>
+<li class="flex items-start gap-4 text-on-surface font-medium">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Predictive audience engagement
+                            </li>
+<li class="flex items-start gap-4 text-on-surface font-medium">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Multi-platform broadcast synchronization
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col items-center mb-16">
+<p class="text-on-surface-variant font-headline font-bold text-sm uppercase tracking-widest mb-10">Trusted by Global Innovators</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+<span class="text-2xl font-black font-headline tracking-tighter">VOXSTREAM</span>
+<span class="text-2xl font-black font-headline tracking-tighter">MEDIANODE</span>
+<span class="text-2xl font-black font-headline tracking-tighter">BROADCAST+</span>
+<span class="text-2xl font-black font-headline tracking-tighter">AIRWAVE</span>
+<span class="text-2xl font-black font-headline tracking-tighter">SYNTHETIC.IO</span>
+</div>
+</div>
+<div class="max-w-4xl mx-auto mt-20 p-12 bg-surface-container rounded-[2rem] relative">
+<span class="material-symbols-outlined absolute top-10 left-10 text-8xl text-primary/5 select-none" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<blockquote class="relative z-10 text-2xl font-headline font-medium text-on-surface leading-snug text-center italic">
+                        "Pulse Media Labs has fundamentally changed how we perceive automated broadcasting. The Engine's ability to orchestrate multi-channel feeds while maintaining human-like nuance is unparalleled in the industry."
+                    </blockquote>
+<div class="mt-8 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-variant mb-4 border-2 border-primary/10">
+<img alt="Portrait of Marcus Thorne" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnzpS4iMTq52nTEHQ7EAVP7E7dTMNM_Hh2grNm4laACj6uuMZCrtPhLOrf1Z2qagMRiclV5ZZyleySZ0CFodCDqXSdNycoFN5b13DQKROhYkWGZSOQUQkGjKAO8-GCr8yZSa2x2zQrE-AUhOlnfE4cC2jm7YHrW_XROQj-r4q96C5639-3NKPaPVHhoNISOoTEXfTMcvwbbb3fbg3BlHn4jEP_uEJR-jdHJ3hbY2MR5h_QgLwlqjQLuo-Sn3TzXDJFOoc_aP12nw"/>
+</div>
+<div class="text-center">
+<p class="font-headline font-bold text-on-surface">Marcus Thorne</p>
+<p class="text-sm text-on-surface-variant uppercase tracking-widest font-bold">CTO, VoxStream Media</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="bg-primary p-12 md:p-24 rounded-[3rem] relative overflow-hidden text-center">
+<div class="absolute inset-0 opacity-10 mix-blend-overlay">
+<img alt="Futuristic data connection background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAewb7dqkjhpdAqwNQf8xT9RD-p6vQR_z5hio29r4l9cUMGAq3IkqoRLqcvJFXH4-j0mjJUBDYT7OQ4eiaR_X5jX_KW_7jZSQg5Pc99jMrgtBftluFVAm_tfKc7POWIW6N3k_mYup-HbAs2pQgGbtXz22S5KgytmlrQZu49Q3NvhbRdJ7U8ItqPcpe7XBeJ8zrmEHTXUheX0M8doX_Qes_nu_ZiWDt0JOM9in75CbEpv6vvj-imB1xe0_IquJMAS3OrWOIIWRUBfw"/>
+</div>
+<div class="relative z-10 space-y-8">
+<h2 class="text-4xl md:text-6xl font-headline font-extrabold text-white tracking-tight">Ready to feel the pulse?</h2>
+<p class="text-xl text-primary-fixed-dim max-w-2xl mx-auto font-body">Join the elite ranks of media companies scaling with precision orchestration.</p>
+<div class="flex flex-wrap justify-center gap-6 pt-4">
+<button class="bg-white text-primary px-10 py-5 rounded-2xl font-headline font-bold text-lg shadow-2xl hover:bg-surface-container-lowest transition-all active:scale-95">
+                                Get Started Now
+                            </button>
+<button class="bg-primary-container text-white border border-white/20 px-10 py-5 rounded-2xl font-headline font-bold text-lg hover:bg-white/5 transition-all">
+                                Schedule Demo
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 bg-slate-50">
+<div class="max-w-7xl mx-auto px-8 py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+<div class="col-span-2">
+<div class="text-lg font-bold text-cyan-950 mb-6">Pulse Media Labs</div>
+<p class="text-slate-500 text-sm max-w-xs leading-relaxed">Pioneering the future of media orchestration through intelligent engineering and design.</p>
+</div>
+<div>
+<h4 class="font-bold text-cyan-900 mb-6 font-headline">Product</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-cyan-700 transition-colors text-sm" href="#">Features</a></li>
+<li><a class="text-slate-500 hover:text-cyan-700 transition-colors text-sm" href="#">Security</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-cyan-900 mb-6 font-headline">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-cyan-700 transition-colors text-sm" href="#">About</a></li>
+<li><a class="text-slate-500 hover:text-cyan-700 transition-colors text-sm" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-cyan-900 mb-6 font-headline">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-cyan-700 transition-colors text-sm" href="#">Privacy</a></li>
+<li><a class="text-slate-500 hover:text-cyan-700 transition-colors text-sm" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200/50 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-400 text-xs">© 2024 Pulse Media Labs. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-slate-400 text-xl cursor-pointer hover:text-primary transition-colors">public</span>
+<span class="material-symbols-outlined text-slate-400 text-xl cursor-pointer hover:text-primary transition-colors">hub</span>
+<span class="material-symbols-outlined text-slate-400 text-xl cursor-pointer hover:text-primary transition-colors">rss_feed</span>
+</div>
+</div>
+</footer>
+</body></html>
