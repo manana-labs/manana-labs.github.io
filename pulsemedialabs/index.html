@@ -2,10 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Redirecting…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse Media Labs</title>
   <script>
-    var ACTIVE = "v1/"; // change to "v2.html" to switch versions
-    window.location.replace(ACTIVE);
+    (function() {
+      var VERSION_MAP = {
+        v1: { src: 'v1/index.html', base: 'v1/' },
+        v2: { src: 'v2.html',       base: '' }
+      };
+
+      fetch('config.json')
+        .then(function(r) { return r.json(); })
+        .then(function(cfg) {
+          var v = VERSION_MAP[cfg.active] || VERSION_MAP.v1;
+          return fetch(v.src).then(function(r) { return r.text(); }).then(function(html) {
+            if (v.base) {
+              html = html.replace(/<head([^>]*)>/, '<head$1><base href="' + v.base + '">');
+            }
+            document.open();
+            document.write(html);
+            document.close();
+          });
+        });
+    })();
   </script>
 </head>
 <body></body>
