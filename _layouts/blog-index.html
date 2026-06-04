@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Manana Labs</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .blog-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .blog-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    .blog-list li:first-child {
+      padding-top: 0;
+    }
+    .blog-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .blog-list a {
+      font-weight: 600;
+      font-size: 1rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .post-meta {
+      color: #555;
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><a href="/" style="color:#162a31; text-decoration:none;">Manana Labs</a></h1>
+      <p>Blog</p>
+    </header>
+
+    <nav>
+      <a href="/">← Home</a>
+    </nav>
+
+    <section>
+      <h2>Blog</h2>
+      {% if site.posts.size > 0 %}
+      <ul class="blog-list">
+        {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <span class="post-meta">{{ post.date | date: "%B %-d, %Y" }}{% if post.author %} &bull; {{ post.author }}{% endif %}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p style="color:#555;">No posts yet.</p>
+      {% endif %}
+    </section>
+
+    <footer>
+      &copy; {{ site.time | date: "%Y" }} Manana Labs
+    </footer>
+  </div>
+</body>
+</html>

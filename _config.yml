@@ -1,0 +1,17 @@
+title: Manana Labs
+url: https://mananalabs.ai
+baseurl: ""
+permalink: /blogs/:title/
+markdown: kramdown
+exclude:
+  - pulsemedialabs/v2/DESIGN.md
+  - prompt.md
+  - prompt_pulsemedialab.md
+plugins:
+  - jekyll-sitemap
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
