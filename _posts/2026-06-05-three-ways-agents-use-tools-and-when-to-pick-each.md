@@ -4,7 +4,7 @@ date: 2026-06-05
 author: Balaram Neupane
 ---
 
-Agents are powerful because of their ability to make autonomous decisions. And that power comes from their ability to interact with the environment. The way they interact with that environment varies, and the tools they use fall into a few distinct categories. In this post I try to walk through three of them and why that distinction is important.
+Agents are powerful because of their ability to make autonomous decisions. And that power comes from their ability to interact with the environment. The way they interact with that environment varies, and the tools they use fall into a few distinct categories. In this post I'll walk you through three of them and why that distinction is important.
 
 ## Basics
 
