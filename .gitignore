@@ -1,1 +1,5 @@
 prompt*.md
+vendor/*
+_site/*
+.bundle/*
+Gemfile*
