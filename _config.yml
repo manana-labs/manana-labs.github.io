@@ -3,6 +3,9 @@ url: https://mananalabs.ai
 baseurl: ""
 permalink: /blogs/:title/
 markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
 exclude:
   - pulsemedialabs/v2/DESIGN.md
   - prompt.md
