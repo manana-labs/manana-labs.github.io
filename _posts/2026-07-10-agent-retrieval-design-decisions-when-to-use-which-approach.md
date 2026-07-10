@@ -4,7 +4,7 @@ date: 2026-07-10
 author: Balaram Neupane
 ---
 
-A few weeks ago I wrote about tool types, and how sorting an agent's tools by what they can reach tells you a lot about the system before you read a single line of code. That post covered what an agent can touch. It didn't explain anything about how information travels from those tools into the model's context window. 
+A few weeks ago I wrote about tool types [^1], and how sorting an agent's tools by what they can reach tells you a lot about the system before you read a single line of code. That post covered what an agent can touch. It didn't explain anything about how information travels from those tools into the model's context window. 
 
 This post is about that second part, In this post, I try to explain some of the control levers you can tweak when talking about retrieval. 
 
@@ -22,7 +22,7 @@ At the other end, the model writes its own queries. It picks the tool, phrases t
 
 There's a third position that I think deserves more attention: scoped. The model writes whatever query it wants, but the reachable surface underneath is limited. The database credential only sees one table. The file search runs inside a sandboxed directory. The model has full expressive freedom above a hard floor it cannot dig through.
 
-The scoped is important because it's the one that still holds when things go wrong. A fixed query is safe but rigid. A free query is flexible but depends entirely on the model behaving. A scoped query stays safe even when the model is confused, or when someone has stuffed adversarial instructions into a document it just read. A model isn't designed only for good days. It should hold itself together even when retrieved document contains malicious instructions. 
+The scoped is important because it's the one that still holds when things go wrong. A fixed query is safe but rigid. A free query is flexible but depends entirely on the model behaving. A scoped query stays safe even when the model is confused, or when someone has stuffed adversarial instructions into a document it just read [^2]. A model isn't designed only for good days. It should hold itself together even when retrieved document contains malicious instructions. 
 
 ## Who decides the sequence
 
@@ -34,7 +34,7 @@ A fixed DAG wires the steps in advance. Fetch, then filter, then generate, alway
 
 Plan-then-execute lets the model draft the sequence first, then run it. You get one moment where the whole plan is visible and can be checked before anything happens.
 
-Free ReAct hands the model the controller on every turn. Look at the state, pick the next action, repeat until done.
+Free ReAct [^3] hands the model the controller on every turn. Look at the state, pick the next action, repeat until done.
 
 Reach goes up as you move down that list, and so does the number of ways the run can fail. That part is unsurprising. What's more useful is noticing that this axis and the previous one don't move together. You can put a tightly scoped, single-table query inside a completely free ReAct loop. You can also give a rigid three-step DAG full access to your entire data source. These are very different risk profiles, and if you only ask "is this agentic or not," you can't tell them apart.
 
@@ -52,7 +52,7 @@ One detail worth calling out: the permission filter does double duty. It cuts vo
 
 The last question is timing relative to generation.
 
-Eager fetching happens before the model starts. Classic RAG. Everything the model will know is decided up front, which makes runs reproducible and easy to reason about, and also means you're guessing at what will be needed.
+Eager fetching happens before the model starts. Classic RAG [^4]. Everything the model will know is decided up front, which makes runs reproducible and easy to reason about, and also means you're guessing at what will be needed.
 
 Lazy fetching happens mid-reasoning, when the model hits a gap and reaches for a tool. Iterative fetching goes further: fetch, reason, fetch again, hop across documents. Multi-hop buys you reach, and pays for it in tokens and in a larger surface for things to go sideways, because now the results of fetch one shape the query of fetch two.
 
@@ -65,3 +65,10 @@ Who writes the query. Who decides the sequence. How much lands in context. When 
 The reason I find this framing useful is that safety and cost live in these knobs, and almost nowhere else. Teams pour effort into embedding models and chunking strategies, which is data plane work, and it's real work. But when an agent leaks something it shouldn't have, or burns ten times the expected tokens, or does something baffling on step six, the postmortem almost always lands on one of these four questions. Usually one that nobody remembered deciding, because it was decided implicitly, by whatever the framework did by default.
 
 Next time someone tells you their agent "retrieves relevant documents," ask them the four questions. The answers are the architecture.
+
+## References
+
+[^1]: [Three Ways Agents Use Tools and When to Pick Each](/blogs/three-ways-agents-use-tools-and-when-to-pick-each/)
+[^2]: Greshake et al., 2023. [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](https://arxiv.org/abs/2302.12173)
+[^3]: Yao et al., 2022. [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
+[^4]: Lewis et al., 2020. [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)
