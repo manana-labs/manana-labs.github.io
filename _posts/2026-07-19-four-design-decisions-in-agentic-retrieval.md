@@ -116,7 +116,7 @@ Notice how this approach was intelligent enough to check for refunds. For first 
 These decisions don't go hand in hand with the first decision. They both provide you the control at two different levels of granularity. You can have an ReAct loop, while still using a fixed query in each step of the sequence. The tool `fetch_invoices` in above examples can be used with all 3 different methods. If there are multiple tools each with fixed queries, agent will keep iterating to find context that is relevant to answer the question. 
 
 ### How much context comes back
-In agentic retrieval, every token added to the model's context contributes to the cost and latency. To keep the context relevant you want to be selective of how much of retrieved content gets fed to the model. 
+In agentic retrieval, every token added to the model's context contributes to the cost and latency. To keep the context concise you want to be selective of how much of retrieved content gets fed to the model. 
 
 For eg, if you fetch 50 documents, not all 50 documents have to go to the model's context. 
 The standard tools you have access to control how much context comes to the model are: 
@@ -130,7 +130,7 @@ reranked = reranker.rerank(query, candidates)
 
 context = [d for d in reranked[:5] if d.score > 0.72]
 ```
-
+---
 2. Metadata: A filter can be applied on the property of data being fetched.
 
 For example, the articles are in 5 different languages, and user is an English speaker. In that case: 
@@ -139,11 +139,12 @@ candidates = search(query, filter={"lang": "english"})
 ```
 without the filter, the top results might be in German, which are semantically close but useless to the user.
 
+---
 3. Permission filters: The filter may require access control. It's not enough to enforce access control via prompts. The retrieval system must be designed in an appropriate way.
 
 For example, the articles can contain some internal-only articles which are related to fraud investigation procedures. When an internal staff is requesting, the articles should retrieve those internal-only articles too. Whereas when an outside user is requesting, those articles should be excluded. 
 
-
+---
 4. Summarization: In multi-agentic systems, one agent may need to take care of  high volume of context. In those cases, it might not be appropriate to provide raw retrieved content into the model's context. In those cases a separate llm call is made, for summarizing all retrieved content. Which is then passed into the main model's context. It helps prevent bloating the main agent's context. It is also a popular practise with sub-agents. The sub-agents perform a series of steps to figure out some information. The main agent only sees the summarized output from the sub-agent which is required for it to proceed ahead. 
 
 For Example: To investigate the double-charge incident, a sub-agent may be asked to investigate and read multiple payment gateway log entries, incident tickets, docs etc. The main agent requires none of those. The sub agent could come with summary like the following which is enough for main agent:  
