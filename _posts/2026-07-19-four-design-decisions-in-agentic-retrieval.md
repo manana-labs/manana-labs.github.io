@@ -1,5 +1,5 @@
 ---
-title: "Four design decisions in Agentic Retrieval"
+title: "Four Design Decisions in Agentic Retrieval"
 date: 2026-07-19
 author: Balaram, Shashank
 ---
@@ -21,7 +21,7 @@ Beyond how data is organized (eg. as full text, chunked text, embeddings etc), r
 
 ### What gets asked 
 
-At one end, the query is fixed. It's written ahead of time, maybe templated eg. with a user ID or a date, and it never changes based on what the model is thinking. We can test it in isolation. We know exactly what it will do Today because it did the same thing yesterday. <br>
+At one end, the query is fixed. It's written ahead of time, maybe templated eg. with a user ID or a date, and it never changes based on what the model is thinking. We can test it in isolation. We know exactly what it will do today because it did the same thing yesterday. <br>
 Look at the example code below, the query will always fetch the invoices. It could be for a different `user_id` or for a different `start_date`. 
 
 ```python
@@ -64,15 +64,15 @@ One sequence is a fixed DAG where the steps are pre-defined. The model can still
 
 For example: A support agent answering "Why was I charged twice this month?" could follow following DAG:  
 ```python
-fetch_invoices(user_id, month):
-    -> fetch_payment_events(invoice_ids)
-    -> generate_answer(context)
+-> fetch_invoices(user_id, month)
+-> fetch_payment_events(invoice_ids)
+-> generate_answer(context)
 ```
 Every billing related question will always follow this path. If the answer lived in refund policy document, this pipeline fails to provide answer. 
 
 ---
 
-Another sequence is a plan-then-execute sequence. Unlike the first approach where series of steps is fixed for each exeuction, here the plan is created by an agent based on the retrieval required. 
+Another sequence is a plan-then-execute sequence. Unlike the first approach where series of steps is fixed for each execution, here the plan is created by an agent based on the retrieval required. 
 
 Here a planner will generate the series of steps and an executor will perform the actual task. For the same above example, "Why was I charged twice this month?", this will work in following way  : 
 ```python
@@ -109,17 +109,17 @@ Answer: You were double charged due to a payment retry. No refund has
 been issued yet, here's how to request one...
 
 ```
-Notice how this approach was intelligent enough to check of refunds. For first and second methods, this step had to be a part of the DAG or the plan respectively, while with third method, the agent can already decide on it's own. 
+Notice how this approach was intelligent enough to check for refunds. For first and second methods, this step had to be a part of the DAG or the plan respectively, while with third method, the agent can already decide on it's own. 
 
 ---
 
-These decision don't go hand in hand with the first decision. They both provide you the control at two different levels of granulity. You can have an ReAct loop, while still using a fixed query in each step of the sequence. The tool `fetch_invoices` in above examples can be used with all 3 different methods. If there are multiple tools each with fixed queries, agent will keep iterating to find context that is relevant to answer the question. 
+These decisions don't go hand in hand with the first decision. They both provide you the control at two different levels of granularity. You can have an ReAct loop, while still using a fixed query in each step of the sequence. The tool `fetch_invoices` in above examples can be used with all 3 different methods. If there are multiple tools each with fixed queries, agent will keep iterating to find context that is relevant to answer the question. 
 
 ### How much context comes back
 In agentic retrieval, every token added to the model's context contributes to the cost and latency. To keep the context relevant you want to be selective of how much of retrieved content gets fed to the model. 
 
 For eg, if you fetch 50 documents, not all 50 documents have to go to the model's context. 
-The standard tools you have access to to control how much context comes to the model are: 
+The standard tools you have access to control how much context comes to the model are: 
 1. Top-K with a threshold: Say only top 5 documents, that outscore a given similarity threshold will be part of the context. If only 10 documents pass the threshold score, 5 are selected, if only 3 documents do so, only 3 are selected and rest are rejected. Re-ranking is quite common here. You fetch 10, use dedicated re-ranker to shuffle their actual closeness with the query and then select the top-5 only. 
 
 For example, a search over a company's help center with 10,000 articles: 
@@ -146,7 +146,7 @@ For example, the articles can contain some internal-only articles which are rela
 
 4. Summarization: In multi-agentic systems, one agent may need to take care of  high volume of context. In those cases, it might not be appropriate to provide raw retrieved content into the model's context. In those cases a separate llm call is made, for summarizing all retrieved content. Which is then passed into the main model's context. It helps prevent bloating the main agent's context. It is also a popular practise with sub-agents. The sub-agents perform a series of steps to figure out some information. The main agent only sees the summarized output from the sub-agent which is required for it to proceed ahead. 
 
-For Example: To investigate the double-charge incident, a sub-agent may be asked to investigate and read multiple payment gateway log entires, incident tickets, docs etc. The main agent requires none of those. The sub agent could come with summary like the following which is enough for main agent:  
+For Example: To investigate the double-charge incident, a sub-agent may be asked to investigate and read multiple payment gateway log entries, incident tickets, docs etc. The main agent requires none of those. The sub agent could come with summary like the following which is enough for main agent:  
 ```python
 - Incident INC-444 (June 10) causes gateway timeouts which resulted in duplicate transactions. 
 - Auto-refund processed for 100 accounts. 
@@ -158,7 +158,7 @@ The last question is related to when a model can see the context.
 
 Eager fetching happens before the model starts. In Classic RAG, everything the model will see is decided upfront. User makes a query -> the most relevant content is fetched -> The model includes this into it's context. This approach is more reproducible and easy to reason about. It is better when you already know what model needs to know about. 
 
-In billing question discussed above, If we know with certainity that the information related to invoices, payment history and plan is required. The following can be done
+In billing question discussed above, If we know with certainty that the information related to invoices, payment history and plan is required. The following can be done
 ```python
 context = {
     "invoices": fetch_invoices(user.id, last_n_months=3),
