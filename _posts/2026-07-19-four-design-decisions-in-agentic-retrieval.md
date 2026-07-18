@@ -17,7 +17,7 @@ Most practical systems lie somewhere between these two ends, combining fixed ret
 
 
 ## The substeps involved in retrieval
-Beyond how data is organized (eg. as full text, chunked text, embeddings etc), retrieving information from such data involves four separate decisions which are often overlooked. The decisions are: What gets asked, in what order, how much comes back and when. Think of them as four independent dials, each with it's own settings.
+Beyond how data is organized (eg. as full text, chunked text, embeddings etc), retrieving information from such data involves four separate decisions which are often overlooked. The decisions are: What gets asked, in what order, how much comes back and when. Think of them as four independent dials, each with its own settings.
 
 ### What gets asked 
 
@@ -109,17 +109,17 @@ Answer: You were double charged due to a payment retry. No refund has
 been issued yet, here's how to request one...
 
 ```
-Notice how this approach was intelligent enough to check for refunds. For first and second methods, this step had to be a part of the DAG or the plan respectively, while with third method, the agent can already decide on it's own. 
+Notice how this approach was intelligent enough to check for refunds. For first and second methods, this step had to be a part of the DAG or the plan respectively, while with third method, the agent can already decide on its own. 
 
 ---
 
-These decisions don't go hand in hand with the first decision. They both provide you the control at two different levels of granularity. You can have an ReAct loop, while still using a fixed query in each step of the sequence. The tool `fetch_invoices` in above examples can be used with all 3 different methods. If there are multiple tools each with fixed queries, agent will keep iterating to find context that is relevant to answer the question. 
+This decision doesn't go hand in hand with the first decision. They both provide you the control at two different levels of granularity. You can have a ReAct loop, while still using a fixed query in each step of the sequence. The tool `fetch_invoices` in above examples can be used with all 3 different methods. If there are multiple tools each with fixed queries, agent will keep iterating to find context that is relevant to answer the question. 
 
 ### How much context comes back
 In agentic retrieval, every token added to the model's context contributes to the cost and latency. To keep the context concise you want to be selective of how much of retrieved content gets fed to the model. 
 
 For eg, if you fetch 50 documents, not all 50 documents have to go to the model's context. 
-The standard tools you have access to control how much context comes to the model are: 
+The standard tools you have access to, to control how much context comes to the model are: 
 1. Top-K with a threshold: Say only top 5 documents, that outscore a given similarity threshold will be part of the context. If only 10 documents pass the threshold score, 5 are selected, if only 3 documents do so, only 3 are selected and rest are rejected. Re-ranking is quite common here. You fetch 10, use dedicated re-ranker to shuffle their actual closeness with the query and then select the top-5 only. 
 
 For example, a search over a company's help center with 10,000 articles: 
@@ -148,8 +148,8 @@ For example, the articles can contain some internal-only articles which are rela
 4. Summarization: In multi-agentic systems, one agent may need to take care of  high volume of context. In those cases, it might not be appropriate to provide raw retrieved content into the model's context. In those cases a separate llm call is made, for summarizing all retrieved content. Which is then passed into the main model's context. It helps prevent bloating the main agent's context. It is also a popular practise with sub-agents. The sub-agents perform a series of steps to figure out some information. The main agent only sees the summarized output from the sub-agent which is required for it to proceed ahead. 
 
 For Example: To investigate the double-charge incident, a sub-agent may be asked to investigate and read multiple payment gateway log entries, incident tickets, docs etc. The main agent requires none of those. The sub agent could come with summary like the following which is enough for main agent:  
-```python
-- Incident INC-444 (June 10) causes gateway timeouts which resulted in duplicate transactions. 
+```text
+- Incident INC-444 (June 10) caused gateway timeouts which resulted in duplicate transactions. 
 - Auto-refund processed for 100 accounts. 
 - This user's refund not in the processed batch and hence flagged for manual review
 ```
@@ -157,7 +157,7 @@ For Example: To investigate the double-charge incident, a sub-agent may be asked
 ### When the context comes to the model. 
 The last question is related to when a model can see the context. 
 
-Eager fetching happens before the model starts. In Classic RAG, everything the model will see is decided upfront. User makes a query -> the most relevant content is fetched -> The model includes this into it's context. This approach is more reproducible and easy to reason about. It is better when you already know what model needs to know about. 
+Eager fetching happens before the model starts. In Classic RAG, everything the model will see is decided upfront. User makes a query -> the most relevant content is fetched -> The model includes this into its context. This approach is more reproducible and easy to reason about. It is better when you already know what model needs to know about. 
 
 In billing question discussed above, If we know with certainty that the information related to invoices, payment history and plan is required. The following can be done
 ```python
@@ -173,7 +173,7 @@ Here, only single llm call is required which is cheaper and faster.
 ---
 Lazy fetching tries to overcome the limitation of above approach. What if model needs something more than what was passed as the context through RAG? Can model decide to fetch something else again? Here the model can perform fetch mid-reasoning. This is usually how the modern agents operate. 
 
-Take an example of a coding agent. When user enters a command like,  "Add status column to Results table". The agent firstly lists the files hierarchy using a tool like `tree`, using it's output, it decides it needs to see content of  `models.py`, then it fetches the current implementation of `Results` table, the migration status. It then writes new version. It never needs to read what information is there in irrelevant files. 
+Take an example of a coding agent. When user enters a command like,  "Add status column to Results table". The agent firstly lists the files hierarchy using a tool like `tree`, using its output, it decides it needs to see content of  `models.py`, then it fetches the current implementation of `Results` table, the migration status. It then writes new version. It never needs to read what information is there in irrelevant files. 
 ```python
 > tree src/
 > cat src/models.py          # found Results table
@@ -206,4 +206,4 @@ These four decisions are independent. To make that concrete, here is an example 
 
 **When the context comes to the model**: Both. Eager for the shortlisting over the full corpus, lazy for everything after.
 
-Notice the dials don't move together. The sequence is fully agentic while the query surface is tightly capped. If "how agentic is your retrieval" were one question, this system would have no answer. It's four questions, and this system answers each one differently.
+Notice the dials don't move together. The sequence is fully agentic while the query surface is tightly capped. If "how agentic is your retrieval" were one question, this system would have no answer. Its four questions, and this system answers each one differently.
