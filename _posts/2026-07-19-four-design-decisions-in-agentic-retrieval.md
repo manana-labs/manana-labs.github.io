@@ -22,7 +22,7 @@ Beyond how data is organized (eg. as full text, chunked text, embeddings etc), r
 ### What gets asked 
 
 At one end, the query is fixed. It's written ahead of time, maybe templated eg. with a user ID or a date, and it never changes based on what the model is thinking. We can test it in isolation. We know exactly what it will do today because it did the same thing yesterday. <br>
-Look at the example code below, the query will always fetch the invoices. It could be for a different `user_id` or for a different `start_date`. 
+The query below will always fetch the invoices. It could be for a different `user_id` or for a different `start_date`. 
 
 ```python
 query_sql(
@@ -60,7 +60,7 @@ query_sql(
 ### In what order the questions are asked
 The second decision is the sequence of the questions being asked. The first one is about query authorship, and this decision is about the shape of the whole operation. 
 
-One sequence is a fixed DAG where the steps are pre-defined. The model can still own the query inside each step. But it can't re order the steps or add a new one. <br>
+One sequence is a fixed Directed Acyclic Graph(DAG) where the steps are pre-defined. The model can still own the query inside each step. But it can't re-order the steps or add a new one. <br>
 
 For example: A support agent answering "Why was I charged twice this month?" could follow following DAG:  
 ```python
@@ -68,15 +68,16 @@ For example: A support agent answering "Why was I charged twice this month?" cou
 -> fetch_payment_events(invoice_ids)
 -> generate_answer(context)
 ```
-Every billing related question will always follow this path. If the answer lived in refund policy document, this pipeline fails to provide answer. 
+Every billing related question will always follow this path. If the answer lived in a refund policy document which is not a part of the DAG, then this pipeline fails to provide an answer. 
 
 ---
 
-Another sequence is a plan-then-execute sequence. Unlike the first approach where series of steps is fixed for each execution, here the plan is created by an agent based on the retrieval required. 
+Another sequence is a plan-then-execute sequence. Unlike the first approach, where a series of steps is fixed for each execution, the plan is created by an agent based on the retrieval required. 
 
 Here a planner will generate the series of steps and an executor will perform the actual task. For the same above example, "Why was I charged twice this month?", this will work in following way  : 
 ```python
 plan = planner_llm(question)
+# TODO: remove below comment and describe plan. 
 # [
 #   {"tool": "fetch_invoices",       "args": {"user_id": 42, "month": "2026-06"}},
 #   {"tool": "fetch_payment_events", "args": {"invoice_ids": "$step_1.ids"}},
@@ -86,10 +87,15 @@ plan = planner_llm(question)
 for step in plan: 
     results[step.id] = run(step)
 ```
-Notice how planner came with similar actions, but has additional action of `search_docs`. For a different question like `Can I get a VAT invoice?`, the planner could come with only 2 actions. This approach is adaptable. You could also setup the system to require human approval after the planner step before execution.  
+For a given execution, say the generated plan is: 
+- Fetch this month's invoices of the user.
+- Fetch payment events.
+- Search docs related to duplicate charge policy.
+
+Notice how the planner produced similar actions to the previous DAG, but has an additional action of `Search docs`. For a different question like `Can I get a VAT invoice?`, the planner could come with only 2 actions. This approach is adaptable. One can also setup the system to require human approval in between the planner and execution steps.  
 
 ---
-Third type is the ReAct. Instead of one plan and then execute, the agent can decide what next step to take after every action. Agent repeats it until done. There is no plan upfront, every thing is decided on the fly.
+A third type is the ReAct. Instead of fixing a plan and then executing, the agent can decide the next step to take after every action. The agent repeats it until done. There is no plan upfront, everything is decided on the fly.
 
 For example, take a look at the decision trace of an agent below for the same query, `Why was I charged twice this month?`: 
 ```python
@@ -109,12 +115,13 @@ Answer: You were double charged due to a payment retry. No refund has
 been issued yet, here's how to request one...
 
 ```
-Notice how this approach was intelligent enough to check for refunds. For first and second methods, this step had to be a part of the DAG or the plan respectively, while with third method, the agent can already decide on its own. 
+Notice how this approach was intelligent enough to check for refunds. For first and second methods, this step had to be a part of the DAG or the plan respectively.
 
 ---
 
-This decision doesn't go hand in hand with the first decision. They both provide you the control at two different levels of granularity. You can have a ReAct loop, while still using a fixed query in each step of the sequence. The tool `fetch_invoices` in above examples can be used with all 3 different methods. If there are multiple tools each with fixed queries, agent will keep iterating to find context that is relevant to answer the question. 
+This decision related to "Order of questions" don't go hand in hand with the first decision of "What get's asked". They both provide you the control at two different levels of granularity. You can have a ReAct loop, while still using a fixed query in each step of the sequence. The tool `fetch_invoices` in above examples can be used with all 3 different methods. If there are multiple tools each with fixed queries, agent will keep iterating to find context that is relevant to answer the question. 
 
+---
 ### How much context comes back
 In agentic retrieval, every token added to the model's context contributes to the cost and latency. To keep the context concise you want to be selective of how much of retrieved content gets fed to the model. 
 
