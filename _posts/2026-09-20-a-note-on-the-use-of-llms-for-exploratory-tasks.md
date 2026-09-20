@@ -27,7 +27,7 @@ A simple example:
 
 Your Wi-Fi technician tells you that the Wi-Fi is slow because too many devices are connected. To falsify this claim, you disconnect every other device, connect only one device, and test your speed.
 
-- If the speed remains bad, the technician is giving you bs. You have falsified his hypothesis.
+- If the speed remains bad, the technician is giving you bs. You have falsified their hypothesis.
 - If the speed gets better, there could still be alternate explanations for the improvement. But there is merit to what the technician claims.
 
 Note: This is related to the intuition behind null hypothesis testing.
