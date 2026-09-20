@@ -32,7 +32,7 @@ Your Wi-Fi technician tells you that the Wi-Fi is slow because too many devices 
 
 Note: This is related to the intuition behind null hypothesis testing.
 
-Here's some foundational relevant literature from more than 40 years ago if anyone's interested:
+Here's some foundational relevant literature from more than 40 years ago:
 
 - Skim through the works of Wason to learn more about the clever experiments he set up to establish confirmation bias. [Link](https://en.wikipedia.org/wiki/Peter_Cathcart_Wason)
 - Read Klayman and Ha's work from 1987 on misinformation and how we acquire knowledge. [Link](http://stats.org.uk/statistical-inference/KlaymanHa1987.pdf)
