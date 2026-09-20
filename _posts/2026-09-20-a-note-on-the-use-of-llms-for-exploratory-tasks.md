@@ -38,7 +38,6 @@ Here's some foundational relevant literature from more than 40 years ago:
 - Read Klayman and Ha's work from 1987 on misinformation and how we acquire knowledge. [Link](http://stats.org.uk/statistical-inference/KlaymanHa1987.pdf)
 
 This may all seem obvious to all of you. But here's the catch: very few of us truly imbibe this mindset while working with an LLM (or in other aspects of life, in general). A language model is a hypothesis explorer. It's statistically picking the most likely hypothesis for the problem you are specifying, generating code and results accordingly.
-
 But pay attention to the communication game being played here:
 
 - the true hypothesis is H
