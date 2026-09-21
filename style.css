@@ -115,13 +115,13 @@ section a:hover {
     align-items: center;
   }
 
-  nav {
+  nav.site-nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
   }
 
-  nav a {
+  nav.site-nav a {
     margin: 0;
   }
 }
