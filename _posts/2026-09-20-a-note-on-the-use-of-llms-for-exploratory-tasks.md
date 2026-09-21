@@ -37,7 +37,7 @@ Here's some foundational literature from more than 40 years ago:
 - Wason's work on confirmation bias. [Link](https://en.wikipedia.org/wiki/Peter_Cathcart_Wason)
 - Read Klayman and Ha's work from 1987 on misinformation and how we acquire knowledge. [Link](http://stats.org.uk/statistical-inference/KlaymanHa1987.pdf)
 
-This may all seem obvious to all of you. But here's the catch: very few of us truly imbibe this mindset while working with an LLM (or in other aspects of life, in general). A language model is a hypothesis explorer. It's statistically picking the most likely hypothesis for the problem you are specifying, generating code and results accordingly.
+This may seem obvious to all of you. But here's the catch: very few of us actually apply this mindset when working with an LLM, or in life in general. A language model is a hypothesis explorer, statistically picking the most likely hypothesis for the problem you're specifying, and generating code and results accordingly.
 But pay attention to the communication game being played here:
 
 - the true hypothesis is H
