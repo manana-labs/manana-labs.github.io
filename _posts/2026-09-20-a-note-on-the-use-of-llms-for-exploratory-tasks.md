@@ -32,9 +32,9 @@ Your Wi-Fi technician tells you that the Wi-Fi is slow because too many devices 
 
 Note: This is related to the intuition behind null hypothesis testing.
 
-Here's some foundational relevant literature from more than 40 years ago:
+Here's some foundational literature from more than 40 years ago:
 
-- Skim through the works of Wason to learn more about the clever experiments he set up to establish confirmation bias. [Link](https://en.wikipedia.org/wiki/Peter_Cathcart_Wason)
+- Wason's work on confirmation bias. [Link](https://en.wikipedia.org/wiki/Peter_Cathcart_Wason)
 - Read Klayman and Ha's work from 1987 on misinformation and how we acquire knowledge. [Link](http://stats.org.uk/statistical-inference/KlaymanHa1987.pdf)
 
 This may all seem obvious to all of you. But here's the catch: very few of us truly imbibe this mindset while working with an LLM (or in other aspects of life, in general). A language model is a hypothesis explorer. It's statistically picking the most likely hypothesis for the problem you are specifying, generating code and results accordingly.
