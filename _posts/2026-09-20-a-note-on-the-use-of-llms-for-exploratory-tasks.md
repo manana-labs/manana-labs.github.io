@@ -36,7 +36,7 @@ Here's some foundational literature from more than 40 years ago:
 
 - Wason's experiments showing our tendency to seek evidence that confirms what we already believe, rather than evidence that could prove us wrong. [Link](https://en.wikipedia.org/wiki/Peter_Cathcart_Wason)
 - Klayman and Ha's 1987 work on why we default to seeking confirming evidence when testing hypotheses, and the conditions under which that habit misleads us. [Link](http://stats.org.uk/statistical-inference/KlaymanHa1987.pdf)
-- A more recent talk by Ben Recht on how scientists made sense of data before statistics and computing existed as formal tools, tracing the discovery of vitamins in the early 20th century to draw lessons for today's data science practice. [Link](https://www.youtube.com/watch?v=ElJA9ud0sDg)
+- A more recent talk by Ben Recht tracing how scientists made sense of data before modern statistics and computing, using the discovery of vitamins as a case study. [Link](https://www.youtube.com/watch?v=ElJA9ud0sDg)
 
 This may seem obvious to all of you. But here's the catch: very few of us actually apply this mindset when working with an LLM, or in life in general. A language model is a hypothesis explorer, statistically picking the most likely hypothesis for the problem you're specifying, and generating code and results accordingly.
 But pay attention to the communication game being played here:
