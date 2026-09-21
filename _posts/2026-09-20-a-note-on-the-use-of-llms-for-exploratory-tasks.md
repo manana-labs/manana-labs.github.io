@@ -6,7 +6,7 @@ author: Shashank Srikant
 
 (This note was presented to my team in an internal talk. It refers to a working example from an internal project the team was involved in.)
 
-This note is about the use of AI when doing any kind of exploratory analysis, targeted specifically to people starting their careers.
+This note is about the use of AI when doing any kind of exploratory analysis, targeted specifically to engineers starting their careers.
 
 Our recent conversations should have highlighted a problem that has plagued the software engineering and programming languages community for several decades now: the limitation has never been in our ability to crank out code. It's always been in specifying what we need the code to do.
 
