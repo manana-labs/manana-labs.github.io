@@ -12,7 +12,7 @@ Our recent conversations should have highlighted a problem that has plagued the 
 
 Being able to generate code for a given specification is mostly a solved problem today with AI: for a tightly defined spec (more on this below), it's good at generating what's statistically the most common way to solve the problem. Imagine writing a captcha solver, where the inputs, outputs, and functionality are mostly well defined. This problem ought to have been solved by the community a while ago, and we're invoking that communal knowledge that's baked into a statistical predictor (AI model) to predict the sequence of characters (code) that will solve the problem.
 
-The real challenge appears when we don't know what we want. Such cases routinely appear before us: exploring data that we haven't seen before, looking for knowledge/facts/citations/resources that may not even exist out there, writing code for a problem we don't fully understand or appreciate, looking for medical knowledge we don't understand, and so on.
+The real challenge appears when we don't know what we want: exploring data we haven't seen before, looking for knowledge/facts/citations/resources that may not even exist out there, writing code for a problem we don't fully understand or appreciate, looking for medical knowledge we don't understand, and so on.
 
 What should be our mental model, our approach in such cases? The pursuit of science and the tools of reasoning developed over the last several centuries should provide some guidance.
 
