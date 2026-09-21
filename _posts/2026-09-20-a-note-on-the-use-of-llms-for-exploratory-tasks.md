@@ -58,4 +58,4 @@ Please invest in this muscle; LLMs can't substitute for it. I don't want to be i
 
 The point isn't to avoid using LLMs. Quite the opposite. Use them aggressively when you understand the problem. But when you're exploring something unfamiliar, don't outsource the exploration itself. Build the habit of asking what you believe, what you don't know, and what evidence would prove you wrong. That's the muscle that will compound over the course of your career.
 
-P.S. The em dashes in this post were added by me. Not an LLM.
+P.S. The em dashes in this post were added by me.
