@@ -34,7 +34,7 @@ Note: This is related to the intuition behind null hypothesis testing.
 
 Here's some foundational literature from more than 40 years ago:
 
-- Wason's work on confirmation bias. [Link](https://en.wikipedia.org/wiki/Peter_Cathcart_Wason)
+- Wason's experiments showing our tendency to seek evidence that confirms what we already believe, rather than evidence that could prove us wrong. [Link](https://en.wikipedia.org/wiki/Peter_Cathcart_Wason)
 - Klayman and Ha's 1987 work on why we default to seeking confirming evidence when testing hypotheses, and the conditions under which that habit misleads us. [Link](http://stats.org.uk/statistical-inference/KlaymanHa1987.pdf)
 - A more recent talk by Ben Recht on how scientists made sense of data before statistics and computing existed as formal tools, tracing the discovery of vitamins in the early 20th century to draw lessons for today's data science practice. [Link](https://www.youtube.com/watch?v=ElJA9ud0sDg)
 
