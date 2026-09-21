@@ -35,7 +35,7 @@ Note: This is related to the intuition behind null hypothesis testing.
 Here's some foundational literature from more than 40 years ago:
 
 - Wason's work on confirmation bias. [Link](https://en.wikipedia.org/wiki/Peter_Cathcart_Wason)
-- Read Klayman and Ha's work from 1987 on misinformation and how we acquire knowledge. [Link](http://stats.org.uk/statistical-inference/KlaymanHa1987.pdf)
+- Klayman and Ha's 1987 work on why we default to seeking confirming evidence when testing hypotheses, and the conditions under which that habit misleads us. [Link](http://stats.org.uk/statistical-inference/KlaymanHa1987.pdf)
 
 This may seem obvious to all of you. But here's the catch: very few of us actually apply this mindset when working with an LLM, or in life in general. A language model is a hypothesis explorer, statistically picking the most likely hypothesis for the problem you're specifying, and generating code and results accordingly.
 But pay attention to the communication game being played here:
