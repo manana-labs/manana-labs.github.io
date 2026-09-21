@@ -49,7 +49,7 @@ The generated code likely pertains faithfully to H<sub>llm</sub>: no issues ther
 
 This is where the problem arises: you are blind to how far H<sub>llm</sub> is from H<sub>you</sub>, and importantly, how far H<sub>you</sub> is from H. And worse, the artifact C "looks" correct, it's formatted nicely, it has some numbers that seem right at first glance, and has explanations that look right. It likely has references to citations that may be legit, and may even have your favorite emoji. But does C faithfully represent H? Very likely no.
 
-This is where the real game is. And this is where I want you folks to seriously exercise your muscle of invalidating working hypotheses.
+This is the real game. I want you to seriously exercise your muscle of invalidating working hypotheses.
 
 A code or results artifact produced by an LLM should be treated as incorrect by default, unless you can validate it by writing tests, cross-referencing it with other data, or manually checking whether the calculations hold up. I will assume (and you should too) that any result you share that an LLM has produced but which you cannot explain is false. The onus then is on you to prove me wrong. And in the process, prove yourself wrong.
 
