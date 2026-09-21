@@ -46,9 +46,9 @@ But pay attention to the communication game being played here:
 - you prompt the LLM, and the LLM forms its own interpretation of what you mean: H<sub>llm</sub>
 - the code C it produces is conditioned on H<sub>llm</sub>, not directly on H
 
-The generated code likely pertains faithfully to H<sub>llm</sub>: no issues there. That's what LLMs are trained to do well. But notice: H<sub>you</sub> and H<sub>llm</sub> are latent, never written down, never made concrete. You are just observing the artifact C and implicitly judging the goodness of H<sub>llm</sub>, H<sub>you</sub>, and H.
+The generated code likely pertains faithfully to H<sub>llm</sub>: no issues there. That's what LLMs are trained to do well. But notice: H<sub>you</sub> and H<sub>llm</sub> are latent---never written down, never made concrete. You are just observing the artifact C and implicitly judging the goodness of H<sub>llm</sub>, H<sub>you</sub>, and H.
 
-This is where the problem arises: you are blind to how far H<sub>llm</sub> is from H<sub>you</sub>, and importantly, how far H<sub>you</sub> is from H. And worse, the artifact C "looks" correct, it's formatted nicely, it has some numbers that seem right at first glance, and has explanations that look right. It likely has references to citations that may be legit, and may even have your favorite emoji. But does C faithfully represent H? Very likely no.
+This is where the problem arises: you are blind to how far H<sub>llm</sub> is from H<sub>you</sub>, and importantly, how far H<sub>you</sub> is from H. And worse, the artifact C "looks" correct---it's formatted nicely, it has some numbers that seem right at first glance, and has explanations that look right. It likely has references to citations that may be legit, and may even have your favorite emoji. But does C faithfully represent H? Very likely no.
 
 This is the real game. I want you to seriously exercise your muscle of invalidating working hypotheses.
 
@@ -57,3 +57,5 @@ A code or results artifact produced by an LLM should be treated as incorrect by 
 Please invest in this muscle; LLMs can't substitute for it. I don't want to be impressed by how quickly you finish a task, I want to be impressed by how deeply you understand it. AI drastically speeds up work we already understand well, but in exploratory or research work, depth beats pace. Train yourself on bite-sized problems first: when you get an LLM to generate a result for something you don't fully understand, pause and ask what information could falsify it. Building that intuition takes months, and that's fine---you'll see yourself getting better and quicker at it. Once you're comfortable, move on to the autopilot/assisted modes LLMs provide.
 
 The point isn't to avoid using LLMs. Quite the opposite. Use them aggressively when you understand the problem. But when you're exploring something unfamiliar, don't outsource the exploration itself. Build the habit of asking what you believe, what you don't know, and what evidence would prove you wrong. That's the muscle that will compound over the course of your career.
+
+P.S. The em dashes in this post were added by me. Not an LLM.
