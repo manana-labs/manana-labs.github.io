@@ -8,7 +8,7 @@ author: Shashank Srikant
 
 This note is about the use of AI when doing any kind of exploratory analysis, targeted specifically to people starting their careers.
 
-Our recent conversations should have highlighted the limitations of working with AI. These conversations highlight a problem that has plagued the software engineering and programming languages community for several decades now: the limitation has never been in our ability to crank out code. It's always been in specifying what we need the code to do.
+Our recent conversations should have highlighted a problem that has plagued the software engineering and programming languages community for several decades now: the limitation has never been in our ability to crank out code. It's always been in specifying what we need the code to do.
 
 Being able to generate code for a given specification is mostly a solved problem today with AI. That's what AI is good at. For a tightly defined spec (more on this below), it is good at generating what's statistically the most common way to solve the problem. Imagine writing a captcha solver, where the inputs, outputs, and functionality are mostly well defined. This problem ought to have been solved by the community a while ago, and we're invoking that communal knowledge that's baked into a statistical predictor (AI model) to predict the sequence of characters (code) that will solve the problem.
 
