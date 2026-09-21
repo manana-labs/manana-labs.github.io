@@ -51,7 +51,7 @@ This is where the problem arises: you are blind to how far H<sub>llm</sub> is fr
 
 This is the real game. I want you to seriously exercise your muscle of invalidating working hypotheses.
 
-A code or results artifact produced by an LLM should be treated as incorrect by default, unless you can validate it by writing tests, cross-referencing it with other data, or manually checking whether the calculations hold up. I will assume (and you should too) that any result you share that an LLM has produced but which you cannot explain is false. The onus then is on you to prove me wrong. And in the process, prove yourself wrong.
+A code or results artifact produced by an LLM should be treated as incorrect by default, unless you can validate it by writing tests, cross-referencing it with other data, or manually checking whether the calculations hold up. If you can't explain a result, assume---and I will too---that it's false. The onus is on you to prove me wrong, and in the process, prove yourself wrong.
 
 Please invest in this muscle. LLMs cannot substitute for developing the ability to understand and validate unfamiliar problems. I don't want to be impressed by how quickly you can finish a task. I will be very impressed by how deeply you understand the nuts and bolts of your task. Sure, AI will help reduce the time it takes to implement things we understand well drastically. But in any exploratory or research work, there are things we don't understand. In such cases, depth typically outperforms pace. I'd strongly recommend training yourself to explore and validate bite-sized problems first. This may take a few months. Be patient. Once you're comfortable, most certainly move on to the autopilot/assisted modes that LLMs provide.
 
