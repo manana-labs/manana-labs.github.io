@@ -45,7 +45,7 @@ But pay attention to the communication game being played here:
 - you prompt the LLM, and the LLM forms its own interpretation of what you mean: H<sub>llm</sub>
 - the code C it produces is conditioned on H<sub>llm</sub>, not directly on H
 
-The generated code likely pertains faithfully to H<sub>llm</sub>: no issues there. That's what LLMs have been trained well to do, and that's what they are actually good at. But notice: H<sub>you</sub> and H<sub>llm</sub> are latent: they are not specified in any concrete way; they are not written down, and you do not have a concrete sense for them. You are just observing the artifact C and implicitly judging the goodness of H<sub>llm</sub>, H<sub>you</sub>, and H.
+The generated code likely pertains faithfully to H<sub>llm</sub>: no issues there. That's what LLMs are trained to do well. But notice: H<sub>you</sub> and H<sub>llm</sub> are latent, never written down, never made concrete. You are just observing the artifact C and implicitly judging the goodness of H<sub>llm</sub>, H<sub>you</sub>, and H.
 
 This is where the problem arises: you are blind to how far H<sub>llm</sub> is from H<sub>you</sub>, and importantly, how far H<sub>you</sub> is from H. And worse, the artifact C "looks" correct, it's formatted nicely, it has some numbers that seem right at first glance, and has explanations that look right. It likely has references to citations that may be legit, and may even have your favorite emoji. But does C faithfully represent H? Very likely no.
 
