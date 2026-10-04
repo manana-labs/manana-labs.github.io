@@ -1,5 +1,5 @@
 ---
-title: "How You Estimate Exposes How You Think"
+title: "How You Estimate Reveals How You Think"
 date: 2026-10-03
 author: Balaram
 ---
